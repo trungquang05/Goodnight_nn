@@ -18,6 +18,12 @@
         overflow: hidden;
         font-family: Arial, sans-serif;
         flex-direction: column;
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMmDi_vFp7tHRaCeDcyXFnH8EeU2PwlblqNg&s");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+        
       }
 
       @keyframes backgroundBlink {
@@ -74,6 +80,12 @@
         background: rgba(255, 255, 255, 0.5);
         transform: scale(1.05);
       }
+      .video-box {
+  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
     </style>
   </head>
   <body>
@@ -83,10 +95,25 @@
 
 
     <div class="music-control" onclick="toggleMusic()">🎵 Bật/Tắt Nhạc</div>
+<div class="music-control" onclick="openYoutube()">
+  👉Xem trên yt thì bấm vào đây nè cậu:))👈
+</div>
+<div class="video-box">
+  <iframe
+    width="320"
+    height="180"
+    src="https://www.youtube.com/embed/IX9eEYXtHCE"
+    title="YouTube video"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
+
 
     <audio id="bgMusic" loop>
       <source
-        src="y2mate.com - DAISHI DANCE Cecile Corbel  Take Me Hand Lyrics.mp3"
+        src="hihi.mp3"
         type="audio/mp3"
       />
     </audio>
@@ -99,7 +126,7 @@
 
       const wishes = [
         "Ngủ ngon nhé, mai còn dậy sớm đó 😌",
-        "Cậu ngủ nha, đừng thức khuya nữa 😑",
+        "Cậu ngủ nha, nay đi làm mệt rồi nè",
         "Chúc cậu mơ đẹp mai kể tớ nghe đó 😆" ,
         "Đêm nay ngủ thật ngon nhé 🌙",
         "Nhắm mắt lại nào, mai còn nhiều chuyện để nói lắm đó 🌻",
@@ -160,8 +187,13 @@
       music.onerror = () => {
         alert("Không thể phát nhạc. Vui lòng kiểm tra đường dẫn hoặc file nhạc.");
       };
+      function openYoutube() {
+  window.open(
+    "https://www.youtube.com/embed/IX9eEYXtHCE",
+    "_blank"
+  );
+}
     </script>
 
   </body>
 </html>
-
